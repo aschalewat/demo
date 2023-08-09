@@ -6,7 +6,8 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        steps('Checkout') {
+            steps{
                 echo "test"
                     try {
                         checkout scm
@@ -14,18 +15,19 @@ pipeline {
                         echo "${error}"
                         error()
                     }
-               }
-        stage('Build') {
+                }
+            }
+        steps('Build') {
             steps {
                 echo 'Building..'
             }
         }
-        stage('Test') {
+        steps('Test') {
             steps {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        steps('Deploy') {
             steps {
                 echo 'Deploying....'
             }
