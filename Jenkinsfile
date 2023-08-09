@@ -9,13 +9,13 @@ pipeline {
         stage('Checkout') {
             steps{
 
-                try {
-                    echo "test"
+               // try {
+                //    echo "test"
                     checkout scm
-                } catch (error) {
-                    echo "${error}"
-                    error()
-                }
+               // } catch (error) {
+                //    echo "${error}"
+                 //   error()
+                //}
                 }
             }
         stage('Build') {
