@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        steps('Checkout') {
+        stage('Checkout') {
             steps{
                 echo "test"
                     try {
@@ -17,17 +17,17 @@ pipeline {
                     }
                 }
             }
-        steps('Build') {
+        stage('Build') {
             steps {
                 echo 'Building..'
             }
         }
-        steps('Test') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
-        steps('Deploy') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
