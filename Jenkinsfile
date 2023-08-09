@@ -2,7 +2,7 @@ pipeline {
     agent any
 tools{
     maven 'maven'
-    jdk 'jdk1.8'
+    jdk 'Java8'
 }
  stage('Checkout') {
         echo "test"
