@@ -1,20 +1,21 @@
 pipeline {
     agent any
     tools{
-        maven 'maven'
+        maven 'Maven3'
         jdk 'Java8'
     }
 
     stages {
         stage('Checkout') {
             steps{
-                echo "test"
-                    try {
-                        checkout scm
-                    } catch (error) {
-                        echo "${error}"
-                        error()
-                    }
+
+                try {
+                    echo "test"
+                    checkout scm
+                } catch (error) {
+                    echo "${error}"
+                    error()
+                }
                 }
             }
         stage('Build') {
