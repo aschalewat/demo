@@ -2,6 +2,7 @@ pipeline {
     parameters{
         string(name: 'TEST', defaultValue: '', description: 'This is a test parameter')
     }
+    echo params.TEST
     agent any
     tools{
         maven 'Maven3'
