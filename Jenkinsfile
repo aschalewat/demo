@@ -8,7 +8,7 @@ pipeline {
         maven 'Maven3'
         jdk 'Java8'
     }
-    sh 'echo ${params.TEST}'
+    println echo params.TEST
 
     stages {
         stage('Checkout') {
