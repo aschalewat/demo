@@ -2,12 +2,13 @@ pipeline {
     parameters{
         string(name: 'TEST', defaultValue: '', description: 'This is a test parameter')
     }
-    println params.TEST
+
     agent any
     tools{
         maven 'Maven3'
         jdk 'Java8'
     }
+    sh 'echo ${params.TEST}'
 
     stages {
         stage('Checkout') {
