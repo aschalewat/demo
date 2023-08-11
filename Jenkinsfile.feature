@@ -26,7 +26,7 @@ pipeline {
 
             stage('Sonar'){
             steps{
-                withSonarQuveEnv("Sonarqube"){
+                withSonarQubeEnv("Sonarqube"){
                     sh """
                     $SONAR_SCANNER
                     """
