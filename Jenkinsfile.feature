@@ -43,7 +43,7 @@ pipeline {
                 }
 
                 if(gate.status !="OK") {
-                    error "Sonar quality gat failed with status : ${gate.status}""
+                    error "Sonar quality gat failed with status : ${gate.status}"
                 }
             }
         }
