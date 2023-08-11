@@ -23,6 +23,16 @@ pipeline {
                 //}
                 }
             }
+
+            stage('Sonar'){
+            steps{
+                withSonarQuveEnv("Sonarqube"){
+                    sh """
+                    $SONAR_SCANNER
+                    """
+                }
+            }
+            }
         stage('Build') {
             steps {
                 echo 'Building..'
