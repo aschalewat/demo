@@ -24,7 +24,7 @@ pipeline {
                 }
             }
 
-            stage('Sonar'){
+        stage('Sonar'){
             steps{
                 withSonarQubeEnv("Sonarqube"){
                     sh """
@@ -32,7 +32,21 @@ pipeline {
                     """
                 }
             }
+
+            script{
+                def gate
+
+                retry(10){
+                    timeout(unit: 'SECONDS', time: 10){
+                        gate = waitForQualityGate()
+                    }
+                }
+
+                if(gate.status !="OK") {
+                    error "Sonar quality gat failed with status : ${gate.status}""
+                }
             }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
