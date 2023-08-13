@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment{
-        SONAR_HOME = tool 'Sonar-scanner'
+        SONAR_HOME = tool 'Sonarscanner'
         SONAR_SCANNER = "$SONAR_HOME/bin/sonar-scanner"
     }
 
@@ -20,7 +20,7 @@ pipeline {
             steps{
 
                // try {
-                //    echo "test"
+                sh    'echo "test"'
                     checkout scm
                // } catch (error) {
                 //    echo "${error}"
