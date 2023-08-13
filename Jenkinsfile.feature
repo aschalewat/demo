@@ -9,6 +9,11 @@ pipeline {
         jdk 'Java8'
     }
 
+    environment{
+        SONAR_HOME = tool 'Sonar-scanner'
+        SONAR_SCANNER = "$SONAR_HOME/bin/sonar-scanner"
+    }
+
 
     stages {
         stage('Checkout') {
@@ -24,7 +29,15 @@ pipeline {
                 }
             }
 
-
+        stage('Sonar'){
+                    steps{
+                        withSonarQubeEnv("Sonarqube"){
+                            sh """
+                            $SONAR_SCANNER
+                            """
+                        }
+                    }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
