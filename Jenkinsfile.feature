@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment{
-        SONAR_HOME = tool 'Sonarscanner'
+        SONAR_HOME = tool 'SonarScanner'
         SONAR_SCANNER = "$SONAR_HOME/bin/sonar-scanner"
     }
 
