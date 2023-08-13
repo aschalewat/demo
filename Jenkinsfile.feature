@@ -44,7 +44,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Buildingww..'
+                echo 'Building..'
             }
         }
         stage('Test') {
