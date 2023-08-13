@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps{
-                sh    'echo "testtt"'
+                sh    'echo "test"'
                     checkout scm
                 }
             }
